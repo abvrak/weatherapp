@@ -2,6 +2,29 @@
 
 {% block content %}
 
+    {% if api %}
+        {% if api == "Error" %}
+            There was an error, please try again.
+            {% else %}
+
+            <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+                <div class="jumbotron" style="background-color: #ebebeb; width: 50%; padding: 3rem;">
+                  <h1 class="display-4">{{ city }}</h1>
+                  <p class="lead">Placeholder.</p>
+                  <hr class="my-4">
+                  <p>
+                      Temperature: {{ api.main.temp }}°C<br>
+                      Feels Like: {{ api.main.feels_like }}°C<br>
+                      Pressure: {{ api.main.pressure }}<br>
+                      Humidity: {{ api.main.humidity }}%<br>
+                      Wind: {{ api.wind.speed }}m/s<br>
+                  </p>
+                </div>
+            </div>
+
+        {% endif %}
+    {% endif %}
+
 {% endblock %}
 {#                Temperature: {{ api.main.temp }}°C<br>#}
 {#                Feels Like: {{ api.main.feels_like }}°C<br>#}
@@ -9,3 +32,15 @@
 {#                Humidity: {{ api.main.humidity }}%<br>#}
 {#                Wind: {{ api.wind.speed }}km/h?<br>#}
 {#                Description: {{ api.weather.0.description }}#}
+
+
+
+{#clear sky#}
+{#few clouds#}
+{#scattered clouds#}
+{#broken clouds#}
+{#shower rain#}
+{#rain#}
+{#thunderstorm#}
+{#snow#}
+{#mist#}
