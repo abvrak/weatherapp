@@ -1,5 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="jumbotron bg-light w-75 p-5 rounded shadow">
+        <h1 class="fs-1 text-center mb-4 fw-bold">🌤 Witaj na WeatherApp!</h1>
+        <p class="fs-5 text-center">
+            Sprawdź aktualne warunki pogodowe w dowolnym miejscu na świecie. Dzięki integracji z OpenWeather API
+            uzyskasz szczegółowe informacje o temperaturze, wilgotności oraz prędkości wiatru.
+        </p>
+        <hr class="my-4">
+        <h2 class="fs-4 mt-4 text-center fw-semibold">✨ Najważniejsze funkcje:</h2>
+        <ul class="fs-5 list-unstyled text-center">
+            <li><i class="bi bi-thermometer-sun text-warning"></i> <strong>Aktualne dane pogodowe</strong> – zawsze na bieżąco.</li>
+            <li><i class="bi bi-search text-primary"></i> <strong>Łatwe wyszukiwanie miast</strong> – intuicyjna obsługa.</li>
+            <li><i class="bi bi-cloud-sun text-info"></i> <strong>Szczegółowe opisy</strong> – nie tylko liczby, ale i wyjaśnienia.</li>
+        </ul>
+        <p class="fs-5 mt-4 text-center">
+            🌍 Planujesz podróż? A może chcesz wiedzieć, czy warto zabrać parasol? WeatherApp dostarczy Ci wszystkich potrzebnych informacji!
+        </p>
+    </div>
+</div>
 {% endblock %}

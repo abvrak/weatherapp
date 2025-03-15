@@ -5,21 +5,40 @@
     {% if api %}
         {% if api == "Error" %}
             There was an error, please try again.
-            {% else %}
+        {% else %}
 
-            <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-                <div class="jumbotron" style="background-color: #ebebeb; width: 50%; padding: 3rem;">
-                  <h1 class="display-4"><a><img src="https://openweathermap.org/img/wn/{{ api.weather.0.icon }}@2x.png" alt="Weather Icon"></a><strong>{{ city }}</strong>, <span class="fs-1">{{ api.main.temp }}°C</span></h1>
-                  <hr class="my-4">
-                  <p class="lead">
-                  {{ category_description }}
-                  <hr class="my-4">
-                  </p>
-                    <div class="lead row">
-                        <div class="col-md-4 " style="background-color: lightblue; width: 25%; padding: 3rem; display: flex; justify-content: center; align-items: center; text-align: center;">Feels Like: {{ api.main.feels_like }}°C</div>
-                        <div class="col-md-4" style="background-color: lightcoral; width: 25%; padding: 3rem; display: flex; justify-content: center; align-items: center; text-align: center;">Pressure: {{ api.main.pressure }}</div>
-                        <div class="col-md-4" style="background-color: lightcyan; width: 25%; padding: 3rem; display: flex; justify-content: center; align-items: center; text-align: center;">Humidity: {{ api.main.humidity }}%</div>
-                        <div class="col-md-4" style="background-color: lightgreen; width: 25%; padding: 3rem; display: flex; justify-content: center; align-items: center; text-align: center;">Wind: {{ api.wind.speed }}m/s</div>
+            <div class="d-flex justify-content-center align-items-center min-vh-100">
+                <div class="jumbotron bg-light p-5 rounded shadow-lg text-center" style="max-width: 600px; width: 100%;">
+                    <h1 class="display-4">
+                        <img src="https://openweathermap.org/img/wn/{{ api.weather.0.icon }}@2x.png" alt="Weather Icon" class="mb-2">
+                        <strong>{{ city }}</strong>
+                    </h1>
+                    <h2 class="fs-1">{{ api.main.temp|floatformat:0 }}°C</h2>
+                    <hr class="my-4">
+                    <p class="lead">{{ category_description }}</p>
+                    <hr class="my-4">
+
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="bg-info text-white p-3 rounded fw-bold">
+                                Feels Like: {{ api.main.feels_like|floatformat:0 }}°C
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="bg-danger text-white p-3 rounded fw-bold">
+                                Pressure: {{ api.main.pressure }} hPa
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="bg-primary text-white p-3 rounded fw-bold">
+                                Humidity: {{ api.main.humidity }}%
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="bg-success text-white p-3 rounded fw-bold">
+                                Wind: {{ api.wind.speed }} m/s
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
